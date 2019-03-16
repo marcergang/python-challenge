@@ -1,3 +1,6 @@
+# Marc Ergang
+# Homework 3 - PyBank
+#import dependencies
 import os
 import pandas as pd
 import numpy as np
@@ -26,7 +29,6 @@ budget_df = budget_rename_df.set_index("monthly_change")
 mon_max_date = budget_df.loc[1926159.0, "Date"]
 #Find date of the greatest decrease
 mon_min_date = budget_df.loc[-2196167.0, "Date"]
-
 #Print Analysis
 print("Financial Analysis")
 print("-------------------")
@@ -35,5 +37,16 @@ print(f"Total: ${pl_ttl}")
 print(f"Average Change: ${mon_ch_avg}")
 print(f"Greatest Increase: {mon_max_date} ${mon_ch_max}")
 print(f"Greatest Decrease: {mon_min_date} ${mon_ch_min}")
+#output to txt file
+file=open('Mergang_PyBank.txt','a')
+file.write("Financial Analysis")
+file.write("\n-------------------------")
+file.write(f"\nTotal Months: {Months}")
+file.write("\n-------------------------")
+file.write(f"\nTotal: ${pl_ttl}")
+file.write(f"\nAverage Change: ${mon_ch_avg}")
+file.write(f"\nGreatest Increase: {mon_max_date} ${mon_ch_max}")
+file.write(f"\nGreatest Decrease: {mon_min_date} ${mon_ch_min}")
+file.close()
 
 
